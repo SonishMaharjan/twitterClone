@@ -1,0 +1,33 @@
+{%extends "base.html"%}
+
+{%block title%}
+    {{block.super}}|Detail View
+{%endblock title%}
+
+  {%block content%}
+  <div class="row">
+
+    <div class="col-sm-3">
+    Via:
+    <h4>{{object.user}}
+    </h4>
+
+    </div>
+
+    <div class="col-sm-9">
+      {{object.content}}<br>
+
+      Created on:{{object.timestamp}} <br>
+
+    </div>
+
+
+  </div>
+
+
+
+
+
+
+
+{%endblock content%}

@@ -1,0 +1,20 @@
+
+{%extends "base.html"%}
+
+{%block title%}
+    Creat Tweet |{{block.super}}
+{%endblock title%}
+
+{%block content%}
+  <!-- with forme=form --forme and btn_title is used in form.html  -->
+
+<div class="row">
+    <div class="col-sm-6 col-sm-offset-3">
+        <h1>Create Tweet</h1>
+  {%include "tweets/form.html" with form=form btn_title="Tweet"%}
+
+    </div>
+</div>
+
+
+{%endblock content%}

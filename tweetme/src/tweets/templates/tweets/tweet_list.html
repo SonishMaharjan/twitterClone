@@ -1,0 +1,120 @@
+{%extends "base.html"%}
+
+{%block title%}
+    {{block.super}}|List View
+{%endblock title%}
+
+{%block script%}
+    <script>
+
+    function getParameterByName(name, url) {
+    if (!url) url = window.location.href;
+    name = name.replace(/[\[\]]/g, '\\$&');
+    var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+        results = regex.exec(url);
+    if (!results) return null;
+    if (!results[2]) return '';
+    return decodeURIComponent(results[2].replace(/\+/g, ' '));
+}
+
+
+
+
+
+$(document).ready(function(){
+
+           var query = getParameterByName('q')
+
+           $.ajax({
+           url:"/api/tweets/",
+           data:{
+            "q":query,
+           }
+           ,
+           method:"GET",
+           success:function(data){
+                $.each(data,function(key,value){
+                    tweetContent = value.content
+                    user = value.user.username
+
+                    $("#tweet-container").append("<div class='media'><div class='media-body'>"+tweetContent
+                    +"<br>Via: "+user+ " | "  +"<a href='#'> View</a></div></div>"+"<hr>")
+
+                })
+
+
+
+
+           },
+           error:function(data){
+            console.log("ERROR")
+            console.log(data)
+           }
+
+
+        })
+
+})
+
+
+
+    </script>
+{%endblock script%}
+{%block content%}
+
+
+
+
+    <!--By default tweet_list:: custom_list is defined in get_context_data in views.py/List-->
+
+
+    <div class="row">
+        <div class="col-sm-3">
+            <h3>@{{request.user.username}}</h3>
+        </div>
+        <div class="col-sm-9">
+            {%if not request.GET.q%}
+            <!-- create_form,create_redirect_url is defined in TweetListView def get_context_data()-->
+            {% include "tweets/form.html" with form=create_form action_url=create_redirect_url btn_title="Tweet"%}
+            <hr>
+            {%endif%}
+
+          {%for object in custom_list%}
+
+            <div id="tweet-container">
+
+
+            </div>
+
+
+
+
+
+              {%empty%}
+                {%if request.GET.q%}
+                  <p>No tweet found</p>
+                {%else%}
+
+                  <p>No tweets yet</p>
+                {%endif%}
+
+
+          {%endfor%}
+
+
+        </div>
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+{%endblock content%}

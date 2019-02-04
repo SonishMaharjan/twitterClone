@@ -1,0 +1,11 @@
+{%extends "base.html"%}
+
+{%block title%}
+    {{block.super}}|Update Tweet
+{%endblock title%}
+
+{%block content%}
+    <p>update {{object}}</p>
+    {%include "tweets/form.html" with forme=form btn_title="Edit Tweet"%}
+
+{%endblock content%}
