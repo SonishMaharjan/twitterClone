@@ -1,7 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d19d6adb-944f-4733-bcb1-02154ac92cf1" name="Default Changelist" comment="" />
+    <list default="true" id="d19d6adb-944f-4733-bcb1-02154ac92cf1" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tweetme/src/accounts/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/tweetme/src/accounts/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tweetme/src/accounts/api/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/tweetme/src/accounts/api/serializers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tweetme/src/accounts/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/tweetme/src/accounts/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tweetme/src/accounts/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/tweetme/src/accounts/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tweetme/src/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/tweetme/src/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tweetme/src/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/tweetme/src/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tweetme/src/tweetme/settings/base.py" beforeDir="false" afterPath="$PROJECT_DIR$/tweetme/src/tweetme/settings/base.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tweetme/src/tweetme/settings/local.py" beforeDir="false" afterPath="$PROJECT_DIR$/tweetme/src/tweetme/settings/local.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tweetme/src/tweetme/settings/production.py" beforeDir="false" afterPath="$PROJECT_DIR$/tweetme/src/tweetme/settings/production.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tweetme/src/tweetme/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/tweetme/src/tweetme/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tweetme/src/tweets/api/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/tweetme/src/tweets/api/serializers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tweetme/src/tweets/api/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/tweetme/src/tweets/api/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tweetme/src/tweets/api/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/tweetme/src/tweets/api/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tweetme/src/tweets/mixins.py" beforeDir="false" afterPath="$PROJECT_DIR$/tweetme/src/tweets/mixins.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tweetme/src/tweets/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/tweetme/src/tweets/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tweetme/src/tweets/templates/tweets/form.html" beforeDir="false" afterPath="$PROJECT_DIR$/tweetme/src/tweets/templates/tweets/form.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tweetme/src/tweets/templates/tweets/search_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/tweetme/src/tweets/templates/tweets/search_form.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tweetme/src/tweets/templates/tweets/tweet_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/tweetme/src/tweets/templates/tweets/tweet_list.html" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -13,8 +33,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tweetme/src/tweets/api/serializers.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="76">
-              <caret line="4" column="33" selection-start-line="4" selection-start-column="33" selection-end-line="4" selection-end-column="33" />
+            <state relative-caret-position="114">
+              <caret line="8" column="33" selection-start-line="8" selection-start-column="33" selection-end-line="8" selection-end-column="33" />
               <folding>
                 <element signature="e#0#38#0" expanded="true" />
               </folding>
@@ -25,8 +45,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tweetme/src/accounts/api/serializers.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="20" selection-start-line="20" selection-end-line="21" />
+            <state relative-caret-position="418">
+              <caret line="23" selection-start-line="23" selection-end-line="23" />
               <folding>
                 <element signature="e#1#47#0" expanded="true" />
               </folding>
@@ -43,20 +63,32 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tweetme/src/tweets/views.py">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/tweetme/src/tweets/templates/tweets/tweet_list.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="228">
-              <caret line="12" selection-start-line="12" selection-end-line="12" selection-end-column="30" />
+            <state relative-caret-position="325">
+              <caret line="196" selection-start-line="196" selection-end-line="196" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/tweetme/src/tweets/templates/tweets/tweet_list.html">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tweetme/src/tweets/forms.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-380">
-              <caret line="30" column="22" selection-start-line="30" selection-start-column="22" selection-end-line="30" selection-end-column="22" />
+            <state relative-caret-position="76">
+              <caret line="6" selection-start-line="6" selection-end-line="6" />
+              <folding>
+                <element signature="e#0#24#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tweetme/src/tweets/templates/tweets/form.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="36" selection-start-column="36" selection-end-column="36" />
             </state>
           </provider>
         </entry>
@@ -76,6 +108,9 @@
       <find>host</find>
     </findStrings>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
@@ -83,7 +118,6 @@
         <option value="$PROJECT_DIR$/tweetme/src/tweets/templates/tweets/search_form.html" />
         <option value="$PROJECT_DIR$/tweetme/src/templates/navbar.html" />
         <option value="$PROJECT_DIR$/tweetme/src/tweets/templates/tweets/detail_view.html" />
-        <option value="$PROJECT_DIR$/tweetme/src/tweets/templates/tweets/form.html" />
         <option value="$PROJECT_DIR$/tweetme/src/tweets/templates/tweets/tweet_form.html" />
         <option value="$PROJECT_DIR$/tweetme/src/tweets/forms.py" />
         <option value="$PROJECT_DIR$/tweetme/src/tweetme/settings/local.py" />
@@ -99,6 +133,8 @@
         <option value="$PROJECT_DIR$/tweetme/src/accounts/api/serializers.py" />
         <option value="$PROJECT_DIR$/tweetme/src/tweets/views.py" />
         <option value="$PROJECT_DIR$/tweetme/src/tweets/api/views.py" />
+        <option value="$PROJECT_DIR$/tweetme/src/tweets/mixins.py" />
+        <option value="$PROJECT_DIR$/tweetme/src/tweets/templates/tweets/form.html" />
         <option value="$PROJECT_DIR$/tweetme/src/tweets/templates/tweets/tweet_list.html" />
       </list>
     </option>
@@ -109,12 +145,12 @@
     <option name="width" value="1101" />
     <option name="height" value="680" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -148,15 +184,34 @@
               <item name="tweets" type="462c0819:PsiDirectoryNode" />
               <item name="api" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="tweet_me" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tweet_me" type="462c0819:PsiDirectoryNode" />
+              <item name="tweetme" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="tweets" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tweet_me" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tweet_me" type="462c0819:PsiDirectoryNode" />
+              <item name="tweetme" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="tweets" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="tweets" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="com.karateca.jstoolbox.config.JsToolboxConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -190,21 +245,20 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="63" y="27" width="1303" height="741" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2625" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2625" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info id="DB Browser" order="3" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.3294893" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3289256" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Terminal" order="8" visible="true" weight="0.32454696" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.21983472" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Python Console" order="10" weight="0.3294893" />
       <window_info anchor="bottom" id="DB Execution Console" order="11" />
@@ -253,16 +307,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-114">
           <caret line="12" column="8" selection-start-line="12" selection-start-column="8" selection-end-line="12" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tweetme/src/tweets/templates/tweets/list_view.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tweetme/src/tweets/templates/tweets/form.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="57">
-          <caret line="3" column="46" selection-start-line="3" selection-start-column="46" selection-end-line="3" selection-end-column="46" />
         </state>
       </provider>
     </entry>
@@ -317,16 +361,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tweetme/src/tweets/forms.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="6" selection-start-line="6" selection-end-line="6" />
-          <folding>
-            <element signature="e#0#24#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tweetme/src/tweetme/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="171">
@@ -354,10 +388,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/tweetme/src/tweets/mixins.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="8" column="45" selection-start-line="8" selection-start-column="45" selection-end-line="8" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tweetme/src/tweets/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="12" selection-start-line="12" selection-end-line="12" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tweetme/src/tweets/templates/tweets/list_view.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/tweetme/src/tweets/api/serializers.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="4" column="33" selection-start-line="4" selection-start-column="33" selection-end-line="4" selection-end-column="33" />
+        <state relative-caret-position="114">
+          <caret line="8" column="33" selection-start-line="8" selection-start-column="33" selection-end-line="8" selection-end-column="33" />
           <folding>
             <element signature="e#0#38#0" expanded="true" />
           </folding>
@@ -366,18 +417,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/tweetme/src/accounts/api/serializers.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="20" selection-start-line="20" selection-end-line="21" />
+        <state relative-caret-position="418">
+          <caret line="23" selection-start-line="23" selection-end-line="23" />
           <folding>
             <element signature="e#1#47#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tweetme/src/tweets/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="12" selection-start-line="12" selection-end-line="12" selection-end-column="30" />
         </state>
       </provider>
     </entry>
@@ -388,10 +432,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/tweetme/src/tweets/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="6" selection-start-line="6" selection-end-line="6" />
+          <folding>
+            <element signature="e#0#24#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tweetme/src/tweets/templates/tweets/form.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="36" selection-start-column="36" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/tweetme/src/tweets/templates/tweets/tweet_list.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-380">
-          <caret line="30" column="22" selection-start-line="30" selection-start-column="22" selection-end-line="30" selection-end-column="22" />
+        <state relative-caret-position="325">
+          <caret line="196" selection-start-line="196" selection-end-line="196" />
         </state>
       </provider>
     </entry>
