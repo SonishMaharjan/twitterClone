@@ -6,6 +6,9 @@ from .validators import validate_content
 # Create your models here.
 from django.urls import reverse,reverse_lazy
 
+from django.utils import timezone
+
+
 class TweetManager(models.Manager):
 
     def retweet(self,user,parent_obj):
@@ -17,8 +20,12 @@ class TweetManager(models.Manager):
         # print(self.get_queryset())
         # print("22")
         # print(self.get_queryset().filter(user=user,parent=parent_obj))
-        qs = self.get_queryset().filter(user=user,parent=og_parent)
-        print(qs)
+        qs = self.get_queryset().filter(user=user,parent=og_parent).filter(
+        timestamp__year = timezone.now().year,
+        timestamp__month = timezone.now().month,
+        timestamp__day = timezone.now().day,
+        )
+        #print(qs)
         if qs.exists():
             return None
         print(" is the user")
