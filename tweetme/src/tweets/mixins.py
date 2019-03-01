@@ -6,7 +6,7 @@ class FormUserNeededMixin():
     
     #this class is inherited on TreatCreateView so when form_valid is called during submission this is called
     def form_valid(self,form):
-        if self.request.user.is_authenticated():
+        if self.request.user.is_authenticated:
             form.instance.user = self.request.user
             return super(FormUserNeededMixin,self).form_valid(form)
         else:

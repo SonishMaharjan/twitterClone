@@ -4,7 +4,18 @@
     {{block.super}}|List View
 {%endblock title%}
 
+
 {%block script%}
+<style >
+  .red-color{
+  color:red;
+
+  }
+
+
+</style>
+
+
     <script>
 
     function getParameterByName(name, url) {
@@ -18,30 +29,152 @@
 }
 
 
+    var tweetList=[]
+    var nextTweetUrl
+
+    function parseTweets()
+    {
+        if(tweetList==0)
+        {
+            $("#tweet-container").text("No tweets currently found.")
+        }
+        else
+        {
+            // console.log("parseTweet: ")
+            // console.log(tweetList)
+            $.each(tweetList,function(key,value){
+                    // console.log("each")
+                    // console.log(value)
+                    if(value.parent)
+                  {
+                      attachTweet(value,false,true)
+                  }
+                  else
+                  {
+                    attachTweet(value)
+                  }
 
 
+                })
+
+        }
+
+    }
+
+
+
+    function attachTweet(tweetValue,prepend,retweet){
+        tweetContent = tweetValue.content
+        var user = tweetValue.user.username
+        var date_display = tweetValue.date_display
+        var user_url = tweetValue.user.url
+        var tweet_url= tweetValue.id
+        var main_tweet = tweetValue.parent
+        var tweetContainerHTML
+
+        if(retweet &&main_tweet)
+        {
+            tweetContainerHTML =
+            "<div class='media'><div class='media-body'>"+
+
+              " <span style='color:grey;'><h5>Retweeted by:<a href='"+user_url+"'>"+user+"</a> "
+                 +" on " + date_display
+
+                +"</h5></span>"+
+
+             main_tweet.content
+
+
+            +"<br>Via: <a href='"+main_tweet.user.url+"'>"+main_tweet.user.username+"</a> "+
+             " | "+main_tweet.date_display +"|" +"<a href='/tweets/"+main_tweet.id+"'> View</a>"+
+             "<br><a class='btn btn-success' href='tweets/"+tweetValue.id +"/retweet'><span style='padding-right:8px;' class='glyphicon glyphicon-retweet'></span>Retweet</a>"+
+
+             "</div></div><hr>"
+
+
+
+        }
+        else {
+
+            tweetContainerHTML ="<div class='media'><div class='media-body'>" +tweetContent
+            +"<br>Via: <a href='"+user_url+"'>"+user+"</a> "+
+             " | "+date_display +"|" +"<a href='/tweets/"+tweet_url+"'> View</a>"+
+             "<br><a class='btn btn-success' href='tweets/"+tweetValue.id +"/retweet'><span style='padding-right:8px;' class='glyphicon glyphicon-retweet'></span>Retweet</a>"+
+
+           "</div></div>"+"<hr>"
+
+        }
+
+
+
+        if (prepend ==true)
+        {
+          //  console.log("prepen = true")
+            $("#tweet-container").prepend(tweetContainerHTML)
+        }
+        else
+          {
+          //  console.log("prepen = false")
+            $("#tweet-container").append(tweetContainerHTML)
+
+          }
+
+
+    }
 
 $(document).ready(function(){
 
            var query = getParameterByName('q')
 
-           $.ajax({
-           url:"/api/tweets/",
+           function updateHashLinks(){
+             $(".media-body").each(function(data){
+               /* /g means global */
+               var hashTagRegex = /(^|\s)#([\w\d-]+)/g
+               /*$n is place holder in replace fxn of nth group in regex */
+              /* console.log($(this).html())*/
+               var newText = $(this).html().replace(hashTagRegex,"$1<a href='/tags/$2/'>#$2</a>")
+               console.log(newText)
+               $(this).html(newText)
+             })
+
+           }
+
+
+           function fetchTweets(url)
+           {
+             var fetchUrl
+             if(!url)
+             {
+               fetchUrl= "/api/tweets/"
+             }
+             else {
+               fetchUrl=url
+             }
+
+                $.ajax({
+           url:fetchUrl,
            data:{
             "q":query,
            }
            ,
            method:"GET",
            success:function(data){
-                $.each(data,function(key,value){
-                    tweetContent = value.content
-                    user = value.user.username
 
-                    $("#tweet-container").append("<div class='media'><div class='media-body'>"+tweetContent
-                    +"<br>Via: "+user+ " | "  +"<a href='#'> View</a></div></div>"+"<hr>")
+                tweetList = data.results
+              //  console.log(tweetList)
 
-                })
+                if(data.next)
+                {
+                    nextTweetUrl = data.next
+                }
 
+                else
+                {
+                  $("#load-more").css("display","none")
+                }
+
+                parseTweets()
+                updateHashLinks()
 
 
 
@@ -53,6 +186,84 @@ $(document).ready(function(){
 
 
         })
+        }
+        var maxTweetChars =140
+        var leftTweetChars=0
+
+        fetchTweets("/api/tweets/")
+
+
+        $("#load-more").click(function(event){
+          event.preventDefault()
+          fetchTweets(nextTweetUrl)
+    })
+
+
+        $("#tweet-form").append("<span id='tweetCharsLeft'>"+maxTweetChars+"</span>")
+
+        $("#tweet-form textarea").keyup(function(event){
+          var tweetValue = $(this).val()
+          leftTweetChars = maxTweetChars - tweetValue.length
+          console.log(leftTweetChars)
+          var charSpan= $("#tweetCharsLeft")
+          charSpan.text(leftTweetChars)
+
+          if(leftTweetChars<0)
+          {
+            charSpan.addClass("red-color")
+
+          }else if (leftTweetChars>0) {
+            charSpan.removeClass("red-color")
+
+          }
+
+
+        })
+
+       $("#tweet-form").submit(function(event){
+
+
+        event.preventDefault()
+        var this_ = $(this)
+        formData = this_.serialize()
+
+        if(leftTweetChars>=0)
+        {
+          $.ajax({
+             url:"/api/tweets/create/",
+             data:formData,
+             method:"POST",
+             success:function(data){
+
+                  attachTweet(data,true)
+                  this_.find("textarea, input[type=text]").val("")
+                  updateHashLinks()
+
+
+
+             },
+             error:function(data){
+              console.log("ERROR")
+
+              console.log(data.status)
+              console.log(data.statusText)
+             }
+
+
+          })
+        }
+        else {
+          console.log("Too long message")
+        }
+
+
+
+
+       }
+
+
+       )
+
 
 })
 
@@ -75,31 +286,26 @@ $(document).ready(function(){
         <div class="col-sm-9">
             {%if not request.GET.q%}
             <!-- create_form,create_redirect_url is defined in TweetListView def get_context_data()-->
-            {% include "tweets/form.html" with form=create_form action_url=create_redirect_url btn_title="Tweet"%}
+            {% include "tweets/form.html" with form=create_form action_url=create_redirect_url btn_title="Tweet" form_id="tweet-form" %}
             <hr>
             {%endif%}
 
-          {%for object in custom_list%}
+
 
             <div id="tweet-container">
 
 
             </div>
 
+            <a href="#" id="load-more">Load More</a>
 
 
 
 
-              {%empty%}
-                {%if request.GET.q%}
-                  <p>No tweet found</p>
-                {%else%}
-
-                  <p>No tweets yet</p>
-                {%endif%}
 
 
-          {%endfor%}
+
+
 
 
         </div>

@@ -1,4 +1,6 @@
-<form class="" action="{%if action_url%}{{action_url}}{%endif%}" method="post">
+<form  {%if form_id%} id="{{form_id}}" {%endif%}
+
+        class="" action="{%if action_url%}{{action_url}}{%endif%}" method="post">
   {%csrf_token%}
   {{form.as_p}}
   <input type="submit" class="btn btn-default" value="{{btn_title}}"/>

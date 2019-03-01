@@ -1,0 +1,77 @@
+{%extends "base.html"%}
+
+{%block title%}
+    {{block.super}}|User Detail View
+{%endblock title%}
+
+  {%block content%}
+  <div class="row">
+
+    <div class="col-sm-3">
+
+    <h4>@{{object.username}}
+    </h4>
+    <p>Follower Count: {{object.followed_by.all.count}}
+      <br>
+        <a class="btn btn-link" href="{%url 'accounts:follow_view' username=object.username%}">
+          {%if not following%}
+
+          Follow
+          {%else%}
+          Unfollow
+          {%endif%}
+        </a>
+    </p>
+
+
+
+    </div>
+
+    <div class="col-sm-9">
+      <h1>Tweets</h1>
+      {%for tweet in object.tweet_set.all%}
+
+      {{tweet}}<br>
+      {%endfor%}
+
+      <h1>Following <small>({{object.profile.get_following.count}})</small></h1>
+      <!-- object.PROFILE. profile->related_name in model
+      object gives User and one to one relation is profile whic takes to UserProfile
+     -->
+
+      <br>
+      <!-- get_following is define in UserProfile model-->
+      {%for user in object.profile.get_following%}
+      <a href="/{{user.username}}">{{user.username}}</a>
+      <br>
+      {%empty%}
+        <p>Not following any users</p>
+      {%endfor%}
+
+      <h1>Followed By</h1>
+
+
+      {%for profile in object.followed_by.all%}
+
+
+      <a href="/{{profile.user.username}}">{{profile.user.username}}</a>
+      <br>
+      {%empty%}
+        <p>Not followed by any users</p>
+      {%endfor%}
+
+
+    </div>
+
+
+
+
+  </div>
+
+
+
+
+
+
+
+{%endblock content%}
